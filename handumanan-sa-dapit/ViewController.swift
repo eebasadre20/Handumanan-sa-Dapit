@@ -18,10 +18,12 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var title = ""
+        
         manager = CLLocationManager()
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
-
+        
         
         if activePlace == -1 {
             manager.requestWhenInUseAuthorization()
@@ -40,11 +42,10 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
             
             self.map.setRegion(region, animated: true)
             
-            let annotation = MKPointAnnotation()
             
-            annotation.coordinate = coordinate
-            annotation.title = places[activePlace]["name"]
-            self.map.addAnnotation(annotation)
+            title = places[activePlace]["name"]!
+            annotation(coordinate, title: title)
+            
         }
         
         
@@ -58,7 +59,6 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
     
     func action(gestureRecognizer:UIGestureRecognizer) {
         if gestureRecognizer.state == UIGestureRecognizerState.Began {
-            print("I'm touching now!")
             var touchPoint = gestureRecognizer.locationInView(self.map)
             
             
@@ -68,9 +68,8 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
             
             // CHECK: CLGeocoder documentation
             CLGeocoder().reverseGeocodeLocation(location, completionHandler: { (placemarks, error) -> Void in
-                
                 var title = ""
-                
+                            
                 if( error == nil ) {
                     if let p = placemarks?[0] {
                         var subThoroughfare:String = ""
@@ -95,11 +94,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
                 places.append(["name":title, "lat":"\(newCoordinate.latitude)","long":"\(newCoordinate.longitude)"])
                 
                 // CHECK: MKPointAnnotation documentation
-                let annotation = MKPointAnnotation()
-                
-                annotation.coordinate = newCoordinate
-                annotation.title = title
-                self.map.addAnnotation(annotation)
+                self.annotation(newCoordinate, title: title)
 
             })
             
@@ -121,6 +116,16 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
         var region:MKCoordinateRegion = MKCoordinateRegionMake(coordinate, span)
         
         self.map.setRegion(region, animated: true)
+    }
+    
+    
+    // To handle in setting up the annotation
+    func annotation( coordinate: CLLocationCoordinate2D, title: String ) {
+        let annotation = MKPointAnnotation()
+        
+        annotation.coordinate = coordinate
+        annotation.title = title
+        self.map.addAnnotation(annotation)
     }
 
     override func didReceiveMemoryWarning() {
