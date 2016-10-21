@@ -14,6 +14,8 @@
 		C9CFF4A41DB3B618006B7512 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CFF4A21DB3B618006B7512 /* LaunchScreen.storyboard */; };
 		C9CFF4AF1DB3B618006B7512 /* handumanan_sa_dapitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFF4AE1DB3B618006B7512 /* handumanan_sa_dapitTests.swift */; };
 		C9CFF4BA1DB3B618006B7512 /* handumanan_sa_dapitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFF4B91DB3B618006B7512 /* handumanan_sa_dapitUITests.swift */; };
+		C9CFF4C81DB3BB58006B7512 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CFF4C71DB3BB58006B7512 /* TableViewController.swift */; };
+		C9CFF4CA1DB3BD84006B7512 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9CFF4C91DB3BD84006B7512 /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		C9CFF4B51DB3B618006B7512 /* handumanan-sa-dapitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "handumanan-sa-dapitUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9CFF4B91DB3B618006B7512 /* handumanan_sa_dapitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = handumanan_sa_dapitUITests.swift; sourceTree = "<group>"; };
 		C9CFF4BB1DB3B618006B7512 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9CFF4C71DB3BB58006B7512 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C9CFF4C91DB3BD84006B7512 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9CFF4CA1DB3BD84006B7512 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +82,7 @@
 		C9CFF48D1DB3B618006B7512 = {
 			isa = PBXGroup;
 			children = (
+				C9CFF4C91DB3BD84006B7512 /* CoreLocation.framework */,
 				C9CFF4981DB3B618006B7512 /* handumanan-sa-dapit */,
 				C9CFF4AD1DB3B618006B7512 /* handumanan-sa-dapitTests */,
 				C9CFF4B81DB3B618006B7512 /* handumanan-sa-dapitUITests */,
@@ -100,6 +106,7 @@
 				C9CFF4991DB3B618006B7512 /* AppDelegate.swift */,
 				C9CFF49B1DB3B618006B7512 /* ViewController.swift */,
 				C9CFF49D1DB3B618006B7512 /* Main.storyboard */,
+				C9CFF4C71DB3BB58006B7512 /* TableViewController.swift */,
 				C9CFF4A01DB3B618006B7512 /* Assets.xcassets */,
 				C9CFF4A21DB3B618006B7512 /* LaunchScreen.storyboard */,
 				C9CFF4A51DB3B618006B7512 /* Info.plist */,
@@ -257,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9CFF49C1DB3B618006B7512 /* ViewController.swift in Sources */,
+				C9CFF4C81DB3BB58006B7512 /* TableViewController.swift in Sources */,
 				C9CFF49A1DB3B618006B7512 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
