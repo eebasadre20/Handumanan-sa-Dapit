@@ -10,7 +10,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "handumanan-sa-dapit/ViewController.swift"
-            timestampString = "498754478.072645"
+            timestampString = "498760348.336366"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "action(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "handumanan-sa-dapit/ViewController.swift"
+            timestampString = "498760348.336366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "95"
@@ -26,12 +42,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "handumanan-sa-dapit/ViewController.swift"
-            timestampString = "498754478.072645"
+            timestampString = "498760348.336366"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "action(_:)"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "annotation(_:title:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
