@@ -63,6 +63,13 @@ class TableViewController: UITableViewController {
         }
     }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            places.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
