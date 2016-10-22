@@ -12,19 +12,22 @@ var places  = [Dictionary<String,String>()]
 var activePlace = -1
 
 class TableViewController: UITableViewController {
+    let userDefaults = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-
-        if let savePlaces = userDefaults.objectForKey("places") {
-            places = savePlaces as! [Dictionary<String, String>]
-        } else {
+        
+        if userDefaults.objectForKey("places")!.count == 0 {
             places.removeAtIndex(0)
             places.append(["name":"Taj Mahal","lat":"27.175277","long":"78.042128"])
             userDefaults.setObject(places, forKey: "places")
+        } else {
+            let savePlaces = userDefaults.objectForKey("places")
+            print(savePlaces)
+            places = savePlaces as! [Dictionary<String, String>]
         }
         
+        userDefaults.synchronize()
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,9 +72,15 @@ class TableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
-            places.removeAtIndex(indexPath.row)
-            tableView.reloadData()
+            if let savePlaces = userDefaults.objectForKey("places")?.mutableCopy()  {
+                savePlaces.removeObjectAtIndex(indexPath.row)
+                places = savePlaces as! [Dictionary<String, String>]
+                userDefaults.setObject(savePlaces, forKey: "places")
+                tableView.reloadData()
+            }
         }
+        
+        userDefaults.synchronize()
     }
     
 
