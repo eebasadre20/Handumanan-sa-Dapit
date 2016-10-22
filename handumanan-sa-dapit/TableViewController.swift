@@ -15,10 +15,14 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let userDefaults = NSUserDefaults.standardUserDefaults()
 
-        if places.count == 1 {
+        if let savePlaces = userDefaults.objectForKey("places") {
+            places = savePlaces as! [Dictionary<String, String>]
+        } else {
             places.removeAtIndex(0)
             places.append(["name":"Taj Mahal","lat":"27.175277","long":"78.042128"])
+            userDefaults.setObject(places, forKey: "places")
         }
         
     }
