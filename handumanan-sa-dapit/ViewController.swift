@@ -92,6 +92,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate, MKMapViewDeleg
                 }
                 
                 places.append(["name":title, "lat":"\(newCoordinate.latitude)","long":"\(newCoordinate.longitude)"])
+                NSUserDefaults.standardUserDefaults().setObject(places, forKey: "places")
                 
                 // CHECK: MKPointAnnotation documentation
                 self.annotation(newCoordinate, title: title)
